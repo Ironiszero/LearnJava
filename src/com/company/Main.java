@@ -1,28 +1,32 @@
 package com.company;
-class Main{
+class Apple extends Object{
+    private String color;
+    private double weight;
+    public Apple(){
+    }
+    public Apple(String color,double weight){
+        this.color=color;
+        this.weight=weight;
+    }
+    public void setColor(String color){
+        this.color=color;
+    }
+    @Override
+    public String toString(){
+        return "Apple[color]=color"+color+",weight="+weight+"]";//列出所有的成员变量；
+    }
+}
+public class Main {
     public static void main(String[] args){
-        //int i=null;//基本类型不接受null值
-        Integer in=2;//2可以自动装箱成Integer
-        Object ob=2.3;//2.3自动装箱double，double向上转型为Object
-        Boolean b=true;//自动装箱
-        Long lg=3L;//自动装箱
-        Long result=in*lg;
-        System.out.println(result);
-        String str="2345";
-       // int i=Integer.parseInt(str);
-        //System.out.println(i);
-        long lo=Long.parseLong(str);//parse解析
-        //System.out.println(lo);
-        String str3="true";
-        boolean b1=Boolean.parseBoolean(str3);
-        System.out.println(b1);
-       // String s4="3a13";
-        //System.out.println(Integer.parseInt(s4));
-        Integer i=20;
-        Integer j=20;
-        System.out.println(i==j);//在-128~127之间是关联的；
-        Integer k=200;
-        Integer l=200;
-        System.out.println(k==l);
+        Apple ap=new Apple("红色",2.3);
+//        下面两行代码完全相同
+        System.out.println(ap);
+        System.out.println(ap.toString());
+        Apple ap2=new Apple("lv",1.7);
+        System.out.println(ap2);
+//        String str=ap2;
+//        任何对象加上”“，就会变成字符串
+        String str=ap2+"";
+        System.out.println(str);
     }
 }
