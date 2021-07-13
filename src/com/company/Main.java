@@ -12,7 +12,7 @@ class Main{
        // int i=Integer.parseInt(str);
         //System.out.println(i);
         long lo=Long.parseLong(str);//parse解析
-        System.out.println(lo);
+        //System.out.println(lo);
         String str3="true";
         boolean b1=Boolean.parseBoolean(str3);
         System.out.println(b1);
