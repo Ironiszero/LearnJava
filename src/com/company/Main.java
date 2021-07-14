@@ -1,11 +1,12 @@
 package com.company;
 public class Main{
-    public void info(){
-        System.out.println("info");
+    class A{
+
     }
     int age=20;
     public static void main(String[] args){
-//        info();
+//        A a=new A();
+//        静态方法使用了非静态的内部类；
 
     }
 }
