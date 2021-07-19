@@ -1,22 +1,18 @@
 package com.company;
-class A{
-    public final String info(){
-        System.out.println("info方法");
-        return "info";
+
+public abstract class Main{
+    private int age;
+    public Main(){
+
     }
-    public final String info(String s){
-        System.out.println("带String的info方法");
-        return "info of String";
+    public Main(int age){
+        this.age=age;
     }
-}
-public class Main extends A{
-    public static void main(String[] args) {
+    public abstract void move();
+    public static void info(){
+        System.out.println("iiiiiii");
     }
-//        @Override
-//        public void info(){
-//            System.out.println("子类重写info方法");
-//        }
-    public void test(){
-        this.info();
+    public static void main(String[] args){
+        System.out.println("Hello World");
     }
 }
