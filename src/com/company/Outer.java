@@ -1,27 +1,22 @@
 package com.company;
-public class Outer {
-    private double weight;
-    public class OuterLeg{
-        public void test(){
-            System.out.println("test方法");
-            System.out.println("weight的成员变量"+weight);
+public class Outer{
+    private int len=20;
+    private class OuterTail{
+        int len=200;
+        public void info(){
+            int len=2000;
+            System.out.println("len:"+len);
+            System.out.println("len:"+this.len);
+            System.out.println("len:"+Outer.this.len);
         }
     }
-    public static class OuterHorn{
-        public static void bar(){
-            System.out.println("bar方法");
-//            System.out.println(weight);
-//            milk();
-        }
-         public void milk(){
-            System.out.println("Cow can produce milk!");
-         }
-    }
-    class A{
-        class B{
-        }
+    public void test(){
+        OuterTail ot =new OuterTail();
+        ot.info();
+
     }
     public static void main(String[] args){
-
+        Outer ou =new Outer();
+        ou.test();
     }
 }
