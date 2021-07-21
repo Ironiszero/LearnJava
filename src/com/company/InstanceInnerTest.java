@@ -8,6 +8,7 @@ public class InstanceInnerTest {
         InstanceInner ii = new InstanceInner();
 //      创建对象：宿主.new 非静态内部类构造器(参数);
          in = ii.new Inner(2);
+         System.out.println(InstanceInner.Inner.MAX);
     }
 }
 
