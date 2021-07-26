@@ -1,32 +1,32 @@
 package com.company;
+
+@FunctionalInterface
+interface Wawa{
+    void wa(String name,int age);
+}
 @FunctionalInterface
 interface Movable{
-    void move();
-    static int sun(int a,int b){
-        return a+b;
-    }
-    default void foo(){
-        System.out.println("foo方法");
-    }
+    void move(double distance);
+}
+@FunctionalInterface
+interface Fn{
+    int cal(int n);
 }
 public class LambdaTest {
     public static void main(String[] args){
-        Movable mov=new Movable(){
-//           类体，通常就是实现抽象方法
-            @Override
-            public void move(){
-                System.out.println("The car is running fast!");
-            }
+                Wawa wa=(String name,int age)->{
+//        只要所实现的抽象方法的形参列表和方法体
+            System.out.println("重写wa方法");
+            System.out.println("name参数:"+name);
+            System.out.println("age参数:"+age);
         };
-//        mov的编译类型是Movable，Movable中声明了几个方法
-//        就可以调用几个方法
-        mov.move();
-        mov.foo();
-//        Lambda表达式,与上面匿名内部类语法的本质是相同的。
-        Movable mov2=() ->{
-            System.out.println("the car is fast!");
+        wa.wa("string",78);
+
+        Movable mv=distance-> System.out.println("重写Movable方法");
+        mv.move(1.2);
+        Fn fn1=n->{
+            return n*n;
         };
-        mov2.move();
-        mov2.foo();
+        System.out.println(fn1.cal(67));
     }
 }
