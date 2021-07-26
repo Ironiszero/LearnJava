@@ -27,6 +27,7 @@ public class 匿名内部类1 {
 //            为什么一定要重写抽象方法，继承他的父类，就必须
 //            因为要实现他所有的抽象方法，
 //            匿名内部类就没有用extends
+//            匿名类中额外增加的方法只能通过反射调用，因此一般不会添加；
             public void test(){
                 System.out.println("test()方法");
             }
